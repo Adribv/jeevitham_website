@@ -11,10 +11,13 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  assetPrefix: '.',
+  assetPrefix: '',
   basePath: '',
   distDir: 'out',
   poweredByHeader: false,
+  experimental: {
+    optimizeCss: true,
+  },
 }
 
 export default nextConfig
