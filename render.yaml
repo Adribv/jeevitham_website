@@ -3,25 +3,14 @@ services:
     name: jeevitham-website
     env: node
     buildCommand: |
-      export NPM_CONFIG_PACKAGE_MANAGER=npm
-      export NPM_CONFIG_USE_NPM=true
-      npm install -g npm@10.2.4
+      rm -f pnpm-lock.yaml
+      rm -f yarn.lock
       npm install
       npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
-      - key: NPM_CONFIG_PRODUCTION
-        value: false
-      - key: NPM_CONFIG_PACKAGE_MANAGER
-        value: npm
-      - key: NPM_CONFIG_USE_NPM
-        value: true
-      - key: DISABLE_PNPM
-        value: true
-      - key: DISABLE_BUN
-        value: true
     healthCheckPath: /
     autoDeploy: true
     nodeVersion: 18.x 
