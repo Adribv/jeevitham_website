@@ -3,8 +3,7 @@ services:
     name: jeevitham-website
     env: node
     buildCommand: |
-      rm -f pnpm-lock.yaml
-      rm -f yarn.lock
+      npm config set package-manager npm@10.2.4
       npm install
       npm run build
     startCommand: npm start
