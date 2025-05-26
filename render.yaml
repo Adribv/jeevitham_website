@@ -2,13 +2,18 @@ services:
   - type: web
     name: jeevitham-website
     env: node
-    buildCommand: npm ci && npm run build
+    buildCommand: |
+      npm install -g npm@10.2.4
+      npm install
+      npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: NPM_CONFIG_PRODUCTION
         value: false
+      - key: NPM_CONFIG_PACKAGE_MANAGER
+        value: npm
     healthCheckPath: /
     autoDeploy: true
     nodeVersion: 18.x 
