@@ -6,7 +6,7 @@ services:
       npm config set package-manager npm@10.2.4
       npm install
       npm run build
-    staticPublishPath: .next
+    staticPublishPath: out
     envVars:
       - key: NODE_ENV
         value: production
