@@ -1,6 +1,0 @@
-[install]
-packageManager = "npm@10.2.4"
-useNpm = true
-
-[build]
-command = "npm run build" 
