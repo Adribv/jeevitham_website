@@ -10,7 +10,12 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NEXT_PUBLIC_BASE_PATH
+        value: ""
     headers:
       - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /_next/static/*
         name: Cache-Control
         value: public, max-age=31536000, immutable 
